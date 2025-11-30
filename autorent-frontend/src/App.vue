@@ -1,8 +1,11 @@
 <template>
-  <Navbar v-if="isLoggedIn" />
+  <Navbar v-if="isLoggedIn"/>
   <router-view />
 </template>
 
 <script setup lang="ts">
-const isLoggedIn = !!localStorage.getItem("token");
+import { computed } from "vue";
+import Navbar from "./components/Navbar.vue";
+
+const isLoggedIn = computed(() => !!localStorage.getItem("token"));
 </script>
