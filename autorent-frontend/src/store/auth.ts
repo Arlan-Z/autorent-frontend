@@ -8,6 +8,7 @@ export const auth = reactive({
   async login(email: string, password: string) {
     const token = await apiLogin(email, password);
     this.token = token;
+    
     localStorage.setItem("token", token);
   },
 
