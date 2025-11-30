@@ -1,8 +1,8 @@
 <template>
-  <Navbar />
+  <Navbar v-if="isLoggedIn" />
   <router-view />
 </template>
 
 <script setup lang="ts">
-import Navbar from "./components/Navbar.vue";
+const isLoggedIn = !!localStorage.getItem("token");
 </script>
